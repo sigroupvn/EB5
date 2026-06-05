@@ -3886,14 +3886,14 @@ button { background: none; border: none; cursor: pointer; }
   text-transform: uppercase;
 }
 .principles-grid-five .principle-card p {
-  color: rgba(255, 246, 234, 0.90);
+  color: #FFFFFF;
   font-size: 0.86rem;
   line-height: 1.9;
   letter-spacing: 0.055em;
   margin-bottom: 18px;
 }
 .principles-grid-five .principle-points li {
-  color: rgba(255, 246, 234, 0.90);
+  color: #FFFFFF;
 }
 .principles-grid-five .principle-points li::before {
   background: #f4c890;
@@ -5557,5 +5557,999 @@ body .video-section h2.section-title {
     background-clip: text !important;
     color: transparent !important;
     -webkit-text-fill-color: transparent !important;
+  }
+}
+
+/* ===== SEC2 MOBILE TITLE VIETNAMESE FONT + GRADIENT FIX (20260605135132) ===== */
+@media (max-width: 768px) {
+  /* Mobile-only Section 2: dùng Playfair Display hỗ trợ tiếng Việt tốt hơn,
+     tăng line-height/padding để dấu tiếng Việt không bị cắt và gradient phủ đều. */
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    width: min(385px, calc(100vw - 10px)) !important;
+    max-width: min(385px, calc(100vw - 10px)) !important;
+    height: auto !important;
+    min-height: 176px !important;
+    margin: 0 auto 18px !important;
+    position: relative !important;
+    left: 3px !important;
+    top: 0 !important;
+    opacity: 1 !important;
+    padding: 4px 0 6px !important;
+    overflow: visible !important;
+    font-family: 'Playfair Display', 'Merriweather', serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: clamp(28px, 7.45vw, 32px) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    white-space: normal !important;
+    text-wrap: initial !important;
+    background: none !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+  }
+
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-mobile-title-line {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 1.4em !important;
+    padding: 1px 0 3px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: linear-gradient(90deg, #7F3E1A 0%, #BA6C41 50%, #783C1A 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+    transform: translateZ(0);
+  }
+}
+
+/* ===== SEC3 MOBILE TITLE FIGMA SPEC (20260605140454) ===== */
+@media (max-width: 768px) {
+  /* Mobile-only Section 3 title: exact requested typography/dimensions. */
+  body .concerns-section .concerns-heading {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body .concerns-section > .container > .concerns-heading > h2.section-title.sec3-title {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    width: min(385px, calc(100vw - 6px)) !important;
+    max-width: min(385px, calc(100vw - 6px)) !important;
+    height: 240px !important;
+    min-height: 240px !important;
+    margin: 0 auto 18px !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    font-family: 'Josefin Sans', var(--font-main), sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: 32px !important;
+    line-height: 40px !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    white-space: normal !important;
+    text-wrap: initial !important;
+  }
+
+  body .concerns-section > .container > .concerns-heading > h2.section-title.sec3-title .sec3-title-line,
+  body .concerns-section > .container > .concerns-heading > h2.section-title.sec3-title .sec3-title-gold-inline {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+  }
+
+  body .concerns-section > .container > .concerns-heading > h2.section-title.sec3-title .sec3-title-line {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+}
+
+/* ===== SEC6 PROJECT MOBILE TITLE + NO ARROWS (20260605142714) ===== */
+@media (max-width: 768px) {
+  /* Mobile-only Section dự án EB-5: title theo spec, không đụng desktop. */
+  body .project-section.eb5-case-section .case-section-heading {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 22px !important;
+    padding: 0 !important;
+    text-align: center !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  body .project-section.eb5-case-section .case-section-heading > h2.section-title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    width: min(385px, calc(100vw - 6px)) !important;
+    max-width: min(385px, calc(100vw - 6px)) !important;
+    height: 80px !important;
+    min-height: 80px !important;
+    margin: 0 auto 12px !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow: visible !important;
+    font-family: 'Josefin Sans', var(--font-main), sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: 32px !important;
+    line-height: 40px !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    white-space: normal !important;
+    text-wrap: initial !important;
+  }
+
+  body .project-section.eb5-case-section .case-section-heading > h2.section-title *,
+  body .project-section.eb5-case-section .case-section-heading > h2.section-title .sec6-title-gold {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-align: inherit !important;
+    text-transform: inherit !important;
+  }
+
+  /* Bỏ hai mũi tên qua/lại trên mobile và canh danh sách dự án full chiều ngang. */
+  body .project-section.eb5-case-section .case-carousel-btn,
+  body .project-section.eb5-case-section #caseProjectPrev,
+  body .project-section.eb5-case-section #caseProjectNext {
+    display: none !important;
+  }
+
+  body .project-section.eb5-case-section .case-carousel-wrap {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  body .project-section.eb5-case-section .case-project-list {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-auto-columns: min(248px, 72vw) !important;
+    gap: 12px !important;
+    padding: 2px 0 12px !important;
+    scroll-padding-inline: 0 !important;
+  }
+
+  body .project-section.eb5-case-section .case-list-item {
+    width: min(248px, 72vw) !important;
+  }
+}
+
+/* ===== SEC6 MOBILE TITLE TIÊU BIỂU NEW LINE (20260605143438) ===== */
+@media (max-width: 768px) {
+  body .project-section.eb5-case-section .case-section-heading > h2.section-title {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  body .project-section.eb5-case-section .case-section-heading > h2.section-title .sec6-title-gold,
+  body .project-section.eb5-case-section .case-section-heading > h2.section-title .sec6-title-tieu-bieu {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    line-height: 40px !important;
+    text-align: center !important;
+  }
+}
+
+
+/* Mobile-only SEC4 UX/UI from SEC4M1.jpg + SEC4M2.jpg */
+.sec4-title-mobile {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .contact-section {
+    min-height: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(21, 21, 20, 0.96) 0%, rgba(17, 17, 17, 0.98) 46%, rgba(18, 18, 18, 0.98) 100%),
+      url('resources/SEC4N.png') center top / cover no-repeat;
+  }
+
+  .contact-section::before {
+    background:
+      radial-gradient(ellipse at 50% 8%, rgba(244, 200, 144, 0.14), transparent 26%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 17%, rgba(0, 0, 0, 0.44) 100%);
+  }
+
+  .contact-section .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  .contact-wrapper.glass,
+  .contact-wrapper {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    gap: 0;
+    background: transparent;
+  }
+
+  .contact-left {
+    min-height: 586px;
+    padding: 50px 30px 31px;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-width: 0 1px;
+    border-style: solid;
+    border-image-source: linear-gradient(180deg, rgba(226, 172, 96, 0.22) 0%, rgba(255, 255, 255, 0.72) 50%, rgba(226, 172, 96, 0.22) 100%);
+    border-image-slice: 1;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(238, 202, 154, 0.13), transparent 36%),
+      linear-gradient(270deg, rgba(217, 217, 217, 0.22) 0%, rgba(0, 0, 0, 0.38) 41%, rgba(217, 217, 217, 0.20) 100%),
+      rgba(24, 24, 24, 0.88);
+    box-shadow: 0 0 15.9px 6px rgba(241, 209, 169, 0.30) inset;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+  }
+
+  .contact-left > .sec4-title:not(.sec4-title-mobile) {
+    display: none;
+  }
+
+  .contact-left .sec4-title-mobile {
+    display: block;
+    width: 100%;
+    margin: 0 0 24px;
+    color: #fffaf3;
+    font-family: var(--font-main);
+    font-size: clamp(1.78rem, 7.9vw, 2.16rem);
+    font-weight: 900;
+    line-height: 1.20;
+    letter-spacing: 0.035em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .contact-left .sec4-title-mobile .sec4-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .contact-left .sec4-title-mobile .sec4-title-gold {
+    color: #f4c890;
+  }
+
+  .contact-left .sec4-title-mobile .sec4-title-white {
+    color: #fffaf3;
+  }
+
+  .contact-left > p {
+    max-width: 100%;
+    margin: 0 0 37px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 1.85;
+    letter-spacing: 0.07em;
+    text-align: center;
+  }
+
+  .contact-left > p strong {
+    color: #fff3dd;
+    font-weight: 800;
+  }
+
+  .contact-perks {
+    gap: 24px;
+    margin: 0 0 38px;
+  }
+
+  .perk {
+    gap: 14px;
+    align-items: center;
+    color: rgba(255, 244, 226, 0.93);
+    font-size: 0.91rem;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.055em;
+  }
+
+  .perk span {
+    width: 12px;
+    min-width: 12px;
+    color: #f4c890;
+    font-size: 0.98rem;
+    font-weight: 400;
+  }
+
+  .contact-hotline {
+    margin-top: 0;
+    gap: 12px;
+    color: #f4c890;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+  }
+
+  .contact-hotline svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .contact-hotline a {
+    color: #f4c890;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+  }
+
+  .contact-right {
+    min-height: 643px;
+    padding: 54px 26px 33px;
+    display: block;
+    background:
+      linear-gradient(180deg, rgba(18, 18, 18, 0.50), rgba(18, 18, 18, 0.70)),
+      url('resources/SEC4N.png') center center / cover no-repeat;
+  }
+
+  .contact-right .si-form {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .contact-form {
+    width: 100%;
+    gap: 0;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 17px !important;
+  }
+
+  .si-form .form-control,
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    min-height: 55px;
+    padding: 15px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(229, 208, 190, 0.66);
+    background: linear-gradient(180deg, rgba(39, 39, 39, 0.86), rgba(24, 24, 24, 0.90));
+    color: #fff8ef;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    letter-spacing: 0.045em;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.12), 0 10px 22px rgba(0,0,0,0.22);
+  }
+
+  .si-form textarea.form-control,
+  .form-group textarea {
+    min-height: 109px;
+    resize: vertical;
+  }
+
+  .si-form .form-control::placeholder,
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.48);
+  }
+
+  .form-actions {
+    display: flex;
+    width: 100%;
+    margin-top: 6px;
+    justify-content: center;
+  }
+
+  .form-actions .si-btn.btn-gold,
+  .si-btn {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e9b76f 0%, #ffe0b0 50%, #e5a75f 100%);
+    color: #16110c;
+    font-size: 0.91rem;
+    font-weight: 900;
+    letter-spacing: 0.20em;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.42);
+  }
+
+  .home-contact-alert {
+    flex-basis: 100%;
+    margin-top: 10px;
+  }
+
+  .form-note {
+    max-width: 330px;
+    margin: 29px auto 0;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 0.70rem;
+    line-height: 1.55;
+    letter-spacing: 0.035em;
+    text-align: center;
+  }
+}
+
+
+/* SEC1 privilege box CSS update (20260605155614) */
+.hero.hero-due-diligence .hero-kicker {
+  width: min(100%, 658px);
+  min-height: 90.96229553222656px;
+  height: auto;
+  opacity: 1;
+  border-radius: 14.18px;
+  border: 1.18px solid;
+  border-image-source: linear-gradient(180deg, rgba(241, 209, 169, 0.2) 0%, #FFFFFF 49.04%, rgba(241, 209, 169, 0.2) 98.08%);
+  border-image-slice: 1;
+}
+
+
+/* SEC1 hide 3 feature boxes, keep text only (20260605160255) */
+.hero.hero-due-diligence .hero-checklist {
+  column-gap: clamp(36px, 5.2vw, 64px) !important;
+  row-gap: 22px !important;
+  margin: 0 auto 44px !important;
+}
+.hero.hero-due-diligence .hero-check.hero-feature-card {
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 10px !important;
+  margin: 0 !important;
+  gap: 0 !important;
+}
+.hero.hero-due-diligence .hero-feature-icon,
+.hero.hero-due-diligence .hero-feature-icon::before {
+  display: none !important;
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.hero.hero-due-diligence .hero-feature-card p {
+  border: none !important;
+  border-image-source: none !important;
+  border-image-slice: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  min-height: 0 !important;
+  max-width: 205px !important;
+  color: #fffaf3 !important;
+}
+.hero.hero-due-diligence .hero-feature-card p .sec1-color-only {
+  color: #F1D1A9 !important;
+  -webkit-text-fill-color: #F1D1A9 !important;
+}
+@media (max-width: 1024px) {
+  .hero.hero-due-diligence .hero-checklist {
+    column-gap: clamp(24px, 4vw, 36px) !important;
+    row-gap: 20px !important;
+  }
+  .hero.hero-due-diligence .hero-check.hero-feature-card {
+    padding: 0 8px !important;
+  }
+}
+@media (max-width: 760px) {
+  .hero.hero-due-diligence .hero-checklist {
+    gap: 18px !important;
+    margin-bottom: 30px !important;
+  }
+  .hero.hero-due-diligence .hero-check.hero-feature-card {
+    display: block !important;
+    text-align: center !important;
+    padding: 0 14px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-card p {
+    max-width: 360px !important;
+    text-align: center !important;
+    font-size: 0.86rem !important;
+    line-height: 1.58 !important;
+    letter-spacing: 0.035em !important;
+  }
+}
+
+
+/* SEC1 restore icons, keep only visual boxes transparent (20260605160537) */
+.hero.hero-due-diligence .hero-feature-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.hero.hero-due-diligence .hero-feature-icon::before {
+  display: block !important;
+  content: '' !important;
+  background: var(--hero-icon) center / contain no-repeat !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+@media (max-width: 760px) {
+  .hero.hero-due-diligence .hero-check.hero-feature-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 4px 14px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-icon {
+    width: 60px !important;
+    height: 60px !important;
+    flex: 0 0 60px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-icon::before {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-card p {
+    text-align: left !important;
+    margin: 0 !important;
+  }
+}
+
+
+/* SEC1 restore icon boxes; remove only text/card boxes (20260605160718) */
+.hero.hero-due-diligence .hero-check.hero-feature-card {
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.hero.hero-due-diligence .hero-feature-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 92px !important;
+  height: 92px !important;
+  border-radius: 13px !important;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255, 231, 198, 0.20), rgba(255, 231, 198, 0.02) 42%),
+    linear-gradient(180deg, rgba(58, 45, 39, 0.94), rgba(30, 26, 25, 0.94)) !important;
+  border: 1px solid rgba(241, 209, 169, 0.72) !important;
+  box-shadow: 0 0 16px rgba(255, 224, 190, 0.58), inset 0 0 18px rgba(255, 214, 178, 0.18), 0 15px 28px rgba(39, 17, 8, 0.26) !important;
+  color: #F1D1A9 !important;
+}
+.hero.hero-due-diligence .hero-feature-icon::before {
+  display: block !important;
+  content: '' !important;
+  width: 58px !important;
+  height: 58px !important;
+  background: var(--hero-icon) center / contain no-repeat !important;
+}
+.hero.hero-due-diligence .hero-feature-card p {
+  border: none !important;
+  border-image-source: none !important;
+  border-image-slice: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+@media (max-width: 760px) {
+  .hero.hero-due-diligence .hero-check.hero-feature-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 4px 14px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-icon {
+    width: 60px !important;
+    height: 60px !important;
+    flex: 0 0 60px !important;
+    border-radius: 10px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-icon::before {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+
+
+/* SEC1 spacing + clean privilege gradient border (20260605161155) */
+.hero.hero-due-diligence .hero-check.hero-feature-card {
+  gap: 28px !important;
+}
+.hero.hero-due-diligence .hero-feature-card p {
+  margin: 0 auto !important;
+}
+.hero.hero-due-diligence .hero-kicker {
+  position: relative !important;
+  overflow: hidden !important;
+  border: none !important;
+  border-image-source: none !important;
+  border-image-slice: 0 !important;
+  border-radius: 14.18px !important;
+  background: linear-gradient(180deg, rgba(59, 48, 42, 0.92), rgba(39, 31, 28, 0.88)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 0 18px rgba(255,214,178,0.08), 0 14px 30px rgba(45,18,8,0.22) !important;
+}
+.hero.hero-due-diligence .hero-kicker::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  padding: 1.18px !important;
+  border-radius: inherit !important;
+  background: linear-gradient(180deg, rgba(241, 209, 169, 0.28) 0%, rgba(255, 255, 255, 0.96) 49.04%, rgba(241, 209, 169, 0.28) 98.08%) !important;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+}
+.hero.hero-due-diligence .hero-kicker > span {
+  position: relative !important;
+  z-index: 1 !important;
+}
+@media (max-width: 1024px) {
+  .hero.hero-due-diligence .hero-check.hero-feature-card {
+    gap: 24px !important;
+  }
+}
+@media (max-width: 760px) {
+  .hero.hero-due-diligence .hero-check.hero-feature-card {
+    gap: 24px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+
+/* SEC1 PC privilege box visible fallback (20260605161413) */
+@media (min-width: 481px) {
+  .hero.hero-due-diligence .hero-kicker {
+    width: min(100%, 658px) !important;
+    min-height: 90.96229553222656px !important;
+    border-radius: 14.18px !important;
+    border: 1.18px solid rgba(255,255,255,0.82) !important;
+    border-image-source: none !important;
+    border-image-slice: 0 !important;
+    background:
+      linear-gradient(180deg, rgba(59, 48, 42, 0.92), rgba(39, 31, 28, 0.88)) padding-box,
+      linear-gradient(180deg, rgba(241, 209, 169, 0.28) 0%, rgba(255, 255, 255, 0.96) 49.04%, rgba(241, 209, 169, 0.28) 98.08%) border-box !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 0 18px rgba(255,214,178,0.08), 0 14px 30px rgba(45,18,8,0.22) !important;
+  }
+  .hero.hero-due-diligence .hero-kicker::before {
+    display: none !important;
+  }
+}
+
+
+/* SEC2 title copy update spacing (20260605161940) */
+.opportunity-heading .section-title.sec2-mobile-title-strict-4lines {
+  max-width: 980px !important;
+}
+@media (min-width: 769px) {
+  .opportunity-heading .section-title.sec2-mobile-title-strict-4lines {
+    font-size: clamp(32px, 2.25vw, 37.6px) !important;
+    line-height: 1.22 !important;
+    letter-spacing: 1.45px !important;
+  }
+}
+@media (max-width: 768px) {
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    min-height: auto !important;
+  }
+}
+
+
+/* SEC2 title: keep EB-5 together on PC, prevent mobile clipping (20260605162411) */
+.opportunity-section .sec2-eb5-nowrap {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow: visible !important;
+}
+.opportunity-section .opportunity-heading,
+.opportunity-section .section-title.sec2-mobile-title-strict-4lines,
+.opportunity-section .section-title.sec2-mobile-title-strict-4lines .sec2-mobile-title-line {
+  overflow: visible !important;
+}
+@media (min-width: 769px) {
+  .opportunity-heading .section-title.sec2-mobile-title-strict-4lines {
+    max-width: 1040px !important;
+    line-height: 1.28 !important;
+  }
+  .opportunity-section .sec2-mobile-title-line {
+    white-space: normal !important;
+  }
+  .opportunity-section .sec2-eb5-nowrap {
+    white-space: nowrap !important;
+  }
+}
+@media (max-width: 768px) {
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    width: min(390px, calc(100vw - 20px)) !important;
+    max-width: min(390px, calc(100vw - 20px)) !important;
+    min-height: 190px !important;
+    padding: 8px 0 10px !important;
+    font-size: clamp(22px, 6.15vw, 28px) !important;
+    line-height: 1.48 !important;
+    letter-spacing: 0 !important;
+    overflow: visible !important;
+  }
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-mobile-title-line {
+    min-height: 1.48em !important;
+    padding: 2px 0 5px !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+}
+@media (max-width: 374px) {
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    font-size: clamp(20px, 5.9vw, 23px) !important;
+    width: calc(100vw - 18px) !important;
+    max-width: calc(100vw - 18px) !important;
+  }
+}
+
+
+/* SEC2 mobile title final no-cut override (20260605162816) */
+@media (max-width: 768px) {
+  body .opportunity-section > .container > .opportunity-heading {
+    overflow: visible !important;
+  }
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    display: block !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 398px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto 18px !important;
+    padding: 10px 0 12px !important;
+    overflow: visible !important;
+    font-family: 'Playfair Display', 'Merriweather', serif !important;
+    font-size: clamp(21px, 5.55vw, 25px) !important;
+    line-height: 1.46 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+    background: none !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+  }
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-mobile-title-line {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 3px 0 5px !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    overflow: visible !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    line-height: inherit !important;
+    background: linear-gradient(90deg, #7F3E1A 0%, #BA6C41 50%, #783C1A 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+  }
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-eb5-nowrap {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow: visible !important;
+  }
+}
+@media (max-width: 374px) {
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    width: calc(100vw - 24px) !important;
+    font-size: clamp(19px, 5.35vw, 21px) !important;
+    line-height: 1.5 !important;
+  }
+}
+
+
+/* SEC3 mobile-only subtitle exact typography (20260605163733) */
+@media (max-width: 768px) {
+  body .concerns-section .concerns-heading .section-subtitle.sec3-subtitle {
+    box-sizing: border-box !important;
+    width: min(382px, calc(100vw - 28px)) !important;
+    max-width: min(382px, calc(100vw - 28px)) !important;
+    min-height: 182px !important;
+    height: auto !important;
+    margin: 18px auto 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    transform: rotate(0deg) !important;
+    font-family: 'Josefin Sans', var(--font-main), sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 16px !important;
+    line-height: 27.52px !important;
+    letter-spacing: 0.16px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+  body .concerns-section .concerns-heading .section-subtitle.sec3-subtitle .sec3-subtitle-line {
+    display: block !important;
+    white-space: normal !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+    overflow: visible !important;
+  }
+}
+
+
+/* SEC3 mobile subtitle visible white text fix (20260605164506)
+   Note: Figma exports text fill as "background: #FFFFFF"; apply it as actual text fill,
+   not a white rectangle, so the dark Section 3 background remains readable. */
+@media (max-width: 768px) {
+  body .concerns-section .concerns-heading > p.section-subtitle.sec3-subtitle,
+  body .concerns-section .concerns-heading > p.section-subtitle.sec3-subtitle .sec3-subtitle-line {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+  body .concerns-section .concerns-heading > p.section-subtitle.sec3-subtitle {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: min(382px, calc(100vw - 28px)) !important;
+    max-width: min(382px, calc(100vw - 28px)) !important;
+    min-height: 182px !important;
+    height: auto !important;
+    margin: 18px auto 0 !important;
+    padding: 0 !important;
+    transform: rotate(0deg) !important;
+    font-family: 'Josefin Sans', var(--font-main), sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 16px !important;
+    line-height: 27.52px !important;
+    letter-spacing: 0.16px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    overflow: visible !important;
+  }
+  body .concerns-section .concerns-heading > p.section-subtitle.sec3-subtitle .sec3-subtitle-line {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    line-height: inherit !important;
+    font: inherit !important;
+    letter-spacing: inherit !important;
+  }
+}
+
+
+/* SEC3 mobile subtitle normal paragraph final (20260605165125)
+   Fix: remove forced tall box/line blocks; keep only normal mobile typography. */
+@media (max-width: 768px) {
+  body .concerns-section .concerns-heading > p.section-subtitle.sec3-subtitle {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: min(382px, calc(100vw - 32px)) !important;
+    max-width: min(382px, calc(100vw - 32px)) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 14px auto 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    font-family: 'Josefin Sans', var(--font-main), sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 16px !important;
+    line-height: 27.52px !important;
+    letter-spacing: 0.16px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+  body .concerns-section .concerns-heading > p.section-subtitle.sec3-subtitle .sec3-subtitle-line {
+    display: inline !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-align: inherit !important;
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+    background: transparent !important;
+    background-image: none !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    overflow: visible !important;
   }
 }
