@@ -5,17 +5,40 @@
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 const announceBar = document.querySelector('.announce-bar');
+let lastHeaderScrollY = window.scrollY || 0;
+let mobileAnnounceHidden = false;
 
 function updateNavbar() {
+  if (!navbar) return;
   const offset = announceBar ? announceBar.offsetHeight : 0;
   const isMobileHeader = window.matchMedia('(max-width: 768px)').matches;
-  if (window.scrollY > 60) {
+  const currentY = window.scrollY || 0;
+  const scrollingDown = currentY > lastHeaderScrollY + 4;
+  const scrollingUp = currentY < lastHeaderScrollY - 4;
+
+  if (isMobileHeader && announceBar) {
+    if (currentY <= 12 || scrollingUp) mobileAnnounceHidden = false;
+    if (currentY > offset + 24 && scrollingDown) mobileAnnounceHidden = true;
+    document.body.classList.toggle('mobile-announce-hidden', mobileAnnounceHidden);
+  } else {
+    mobileAnnounceHidden = false;
+    document.body.classList.remove('mobile-announce-hidden');
+  }
+
+  if (currentY > 60) {
     navbar.classList.add('scrolled');
-    navbar.style.top = isMobileHeader ? offset + 'px' : '0';
   } else {
     navbar.classList.remove('scrolled');
-    navbar.style.top = offset + 'px';
   }
+
+  if (isMobileHeader) {
+    navbar.style.top = mobileAnnounceHidden ? '0' : offset + 'px';
+  } else {
+    // Desktop giữ nguyên hành vi cũ: đầu trang navbar nằm dưới thanh thông báo,
+    // khi scroll xuống mới dính top 0. Không áp dụng hide/show announce trên PC.
+    navbar.style.top = currentY > 60 ? '0' : offset + 'px';
+  }
+  lastHeaderScrollY = currentY;
 }
 window.addEventListener('scroll', updateNavbar, { passive: true });
 window.addEventListener('resize', updateNavbar, { passive: true });
@@ -181,6 +204,67 @@ function initConcernTabs() {
   });
 }
 initConcernTabs();
+
+// ===== SECTION 3 MOBILE ACCORDION (375px - 430px) =====
+function initConcernMobileAccordion() {
+  const panels = Array.from(document.querySelectorAll('[data-concern-panel]'));
+  const tabs = Array.from(document.querySelectorAll('[data-concern-tab]'));
+  if (!panels.length) return;
+
+  const isAccordionRange = () => window.matchMedia('(min-width: 375px) and (max-width: 430px)').matches;
+
+  function openPanel(target) {
+    panels.forEach(panel => {
+      const isOpen = panel.getAttribute('data-concern-panel') === target;
+      panel.classList.toggle('active', isOpen);
+      panel.classList.toggle('mobile-accordion-open', isOpen);
+      panel.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    tabs.forEach(tab => {
+      const isSelected = tab.getAttribute('data-concern-tab') === target;
+      tab.classList.toggle('active', isSelected);
+      tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+    });
+  }
+
+  function normalizeAccordionState() {
+    if (!isAccordionRange()) {
+      panels.forEach(panel => {
+        panel.classList.remove('mobile-accordion-open');
+        panel.removeAttribute('tabindex');
+        panel.removeAttribute('aria-expanded');
+      });
+      return;
+    }
+
+    const current = panels.find(panel => panel.classList.contains('active')) || panels[0];
+    panels.forEach(panel => {
+      panel.setAttribute('tabindex', '0');
+      panel.setAttribute('aria-expanded', panel === current ? 'true' : 'false');
+    });
+    openPanel(current.getAttribute('data-concern-panel'));
+  }
+
+  panels.forEach(panel => {
+    panel.addEventListener('click', event => {
+      if (!isAccordionRange()) return;
+      if (event.target.closest('a, button, input, select, textarea')) return;
+      openPanel(panel.getAttribute('data-concern-panel'));
+    });
+
+    panel.addEventListener('keydown', event => {
+      if (!isAccordionRange()) return;
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      openPanel(panel.getAttribute('data-concern-panel'));
+    });
+  });
+
+  window.addEventListener('resize', normalizeAccordionState, { passive: true });
+  normalizeAccordionState();
+}
+initConcernMobileAccordion();
 
 // ===== FORM SUBMIT TO CMS / HUBSPOT =====
 const SITE_URL = 'https://sigroup.vn';
@@ -354,15 +438,15 @@ initCmsHubspotContactForm();
 
 // ===== STICKY CTA =====
 const stickyCta = document.getElementById('stickyCta');
-window.addEventListener('scroll', () => {
-  if (window.innerWidth <= 768) {
-    if (window.scrollY > window.innerHeight * 0.5) {
-      stickyCta.style.display = 'flex';
-    } else {
-      stickyCta.style.display = 'none';
-    }
-  }
-}, { passive: true });
+function updateStickyCta() {
+  if (!stickyCta) return;
+  const isMobileCtaRange = window.matchMedia('(min-width: 375px) and (max-width: 430px)').matches;
+  const shouldShow = isMobileCtaRange && window.scrollY > window.innerHeight * 0.35;
+  stickyCta.classList.toggle('is-visible', shouldShow);
+}
+window.addEventListener('scroll', updateStickyCta, { passive: true });
+window.addEventListener('resize', updateStickyCta, { passive: true });
+updateStickyCta();
 
 // ===== CLOSE MOBILE MENU ON OUTSIDE CLICK =====
 document.addEventListener('click', (e) => {
@@ -372,6 +456,7 @@ document.addEventListener('click', (e) => {
       !navLinks.contains(e.target) &&
       !toggle.contains(e.target)) {
     navLinks.classList.remove('mobile-open');
+    document.body.classList.remove('mobile-menu-open');
   }
 });
 
@@ -649,11 +734,13 @@ function eb5RenderProjectList() {
     </button>`).join('');
 }
 
-function eb5SelectProject(index) {
+function eb5SelectProject(index, options = {}) {
+  const shouldScrollList = options.scrollList !== false;
+  const shouldScrollPane = options.scrollPane !== false;
   eb5CurrentSelectedIndex = ((index % EB5_CASE_PROJECTS.length) + EB5_CASE_PROJECTS.length) % EB5_CASE_PROJECTS.length;
   eb5RenderProjectList();
   const activeCard = document.querySelector(`[data-case-project-index="${eb5CurrentSelectedIndex}"]`);
-  activeCard?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  if (shouldScrollList) activeCard?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   const detail = document.getElementById('caseDetailView');
   const pane = document.getElementById('caseDetailPane');
   if (!detail) return;
@@ -671,19 +758,19 @@ function eb5SelectProject(index) {
           <p class="case-detail-desc">${eb5EscapeHtml(proj.description)}</p>
         </div>
         <div class="case-spec-grid">
-          <div class="case-spec"><small>Vị Trí</small><strong title="${eb5EscapeHtml(proj.location)}">${eb5EscapeHtml(proj.location)}</strong></div>
-          <div class="case-spec"><small>Loại Vùng</small><strong class="gold">${eb5EscapeHtml(proj.teaType)}</strong></div>
-          <div class="case-spec"><small>Mức Đầu Tư</small><strong class="gold">${eb5EscapeHtml(proj.investment)}</strong></div>
-          <div class="case-spec"><small>Trung Tâm Vùng</small><strong>${eb5EscapeHtml(proj.regionalCenter)}</strong></div>
-          <div class="case-spec"><small>Việc Làm Tạo Ra</small><strong class="green">${eb5EscapeHtml(proj.jobsPerInvestor)}</strong></div>
-          <div class="case-spec"><small>Quy Mô EB-5</small><strong title="${eb5EscapeHtml(proj.totalSlots)}">${eb5EscapeHtml(proj.totalSlots)}</strong></div>
+          <div class="case-spec"><small>Vị Trí</small><span class="case-spec-value" title="${eb5EscapeHtml(proj.location)}">${eb5EscapeHtml(proj.location)}</span></div>
+          <div class="case-spec"><small>Loại Vùng</small><span class="case-spec-value gold">${eb5EscapeHtml(proj.teaType)}</span></div>
+          <div class="case-spec"><small>Mức Đầu Tư</small><span class="case-spec-value gold">${eb5EscapeHtml(proj.investment)}</span></div>
+          <div class="case-spec"><small>Trung Tâm Vùng</small><span class="case-spec-value">${eb5EscapeHtml(proj.regionalCenter)}</span></div>
+          <div class="case-spec"><small>Việc Làm Tạo Ra</small><span class="case-spec-value green">${eb5EscapeHtml(proj.jobsPerInvestor)}</span></div>
+          <div class="case-spec"><small>Quy Mô EB-5</small><span class="case-spec-value" title="${eb5EscapeHtml(proj.totalSlots)}">${eb5EscapeHtml(proj.totalSlots)}</span></div>
         </div>
         <div class="case-actions">
           <a class="case-consult-link" href="#contact" data-project-consult="${eb5EscapeHtml(proj.title)}">Nhận tư vấn chọn dự án phù hợp</a>
         </div>
       </div>
     </div>`;
-  if (window.innerWidth < 1080 && pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (shouldScrollPane && window.innerWidth < 1080 && pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 
@@ -694,7 +781,7 @@ function eb5MoveProject(direction) {
 function eb5InitCaseExplorer() {
   if (!document.getElementById('caseProjectList') || !document.getElementById('caseDetailView')) return;
   eb5RenderProjectList();
-  eb5SelectProject(0);
+  eb5SelectProject(0, { scrollList: false, scrollPane: false });
   document.getElementById('caseProjectPrev')?.addEventListener('click', () => eb5MoveProject(-1));
   document.getElementById('caseProjectNext')?.addEventListener('click', () => eb5MoveProject(1));
 }

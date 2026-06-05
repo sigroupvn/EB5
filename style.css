@@ -640,21 +640,19 @@ button { background: none; border: none; cursor: pointer; }
 }
 .hero.hero-due-diligence .hero-feature-icon::before {
   content: '';
-  width: 47px;
-  height: 47px;
+  width: 58px;
+  height: 58px;
   display: block;
-  background: currentColor;
-  -webkit-mask: var(--hero-icon) center / contain no-repeat;
-  mask: var(--hero-icon) center / contain no-repeat;
+  background: var(--hero-icon) center / contain no-repeat;
 }
 .hero.hero-due-diligence .hero-feature-calendar .hero-feature-icon {
-  --hero-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='10' y='12' width='42' height='38' rx='5'/%3E%3Cpath d='M20 8v9M42 8v9M10 23h42M20 32h7M34 32h7M20 41h7'/%3E%3Ccircle cx='45' cy='45' r='9'/%3E%3Cpath d='M45 40v6l4 3'/%3E%3C/g%3E%3C/svg%3E");
+  --hero-icon: url('resources/ic1.png?v=20260604-091525');
 }
 .hero.hero-due-diligence .hero-feature-shield .hero-feature-icon {
-  --hero-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 12h26l10 10v8'/%3E%3Cpath d='M38 12v10h10'/%3E%3Cpath d='M18 31l4 4 8-9M18 44l4 4 8-9M39 36l11 4v7c0 7-4 11-11 14-7-3-11-7-11-14v-7zM35 47l4 4 8-9'/%3E%3C/g%3E%3C/svg%3E");
+  --hero-icon: url('resources/ic2.png?v=20260604-091525');
 }
 .hero.hero-due-diligence .hero-feature-education .hero-feature-icon {
-  --hero-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 24l24-12 24 12-24 12z'/%3E%3Cpath d='M18 31v10c5 8 23 8 28 0V31M56 24v14'/%3E%3Ccircle cx='32' cy='42' r='12'/%3E%3Cpath d='M20 42h24M32 30c5 6 5 18 0 24M32 30c-5 6-5 18 0 24'/%3E%3C/g%3E%3C/svg%3E");
+  --hero-icon: url('resources/ic3.png?v=20260604-091525');
 }
 .hero.hero-due-diligence .hero-cta {
   display: flex;
@@ -691,47 +689,61 @@ button { background: none; border: none; cursor: pointer; }
     gap: 28px;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 480px) {
   .hero.hero-due-diligence {
-    padding: 126px 0 74px;
-    background:
-      linear-gradient(180deg, rgba(76, 30, 13, 0.66), rgba(28, 17, 12, 0.72)),
-      url('resources/SEC1N.jpg?v=20260603-144921') center center / cover no-repeat;
+    padding: 0;
+    min-height: calc(100vw * 702 / 430);
+    align-items: stretch;
+    background: url('resources/SEC1U.svg?v=20260605104804') top center / 100% auto no-repeat;
+  }
+  .hero.hero-due-diligence::before,
+  .hero.hero-due-diligence .hero-overlay,
+  .hero.hero-due-diligence .hero-scroll,
+  .hero.hero-due-diligence .hero-title,
+  .hero.hero-due-diligence .hero-kicker,
+  .hero.hero-due-diligence .hero-checklist {
+    display: none;
   }
   .hero.hero-due-diligence .hero-shell {
-    width: min(100%, calc(100% - 28px));
+    width: 100%;
+    min-height: inherit;
+    max-height: inherit;
+    display: block;
+    position: relative;
   }
-  .hero.hero-due-diligence .hero-title,
-  .hero.hero-due-diligence .hero-title-structured {
-    font-size: clamp(1.68rem, 9vw, 2.52rem);
-    line-height: 1.16;
-    letter-spacing: 0.015em;
+  .hero.hero-due-diligence .hero-copy {
+    width: 100%;
+    max-width: none;
+    min-height: inherit;
+    max-height: inherit;
+    margin: 0;
+    position: relative;
   }
-  .hero.hero-due-diligence .hero-title-line {
-    white-space: normal;
-  }
-  .hero.hero-due-diligence .hero-kicker {
-    min-height: auto;
-    padding: 14px 16px 12px;
-    margin-bottom: 32px;
-    font-size: 0.76rem;
-    letter-spacing: 0.08em;
-  }
-  .hero.hero-due-diligence .hero-checklist {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    margin-bottom: 34px;
-  }
-  .hero.hero-due-diligence .hero-feature-icon {
-    width: 78px;
-    height: 78px;
-  }
-  .hero.hero-due-diligence .hero-feature-icon::before {
-    width: 40px;
-    height: 40px;
+  .hero.hero-due-diligence .hero-cta {
+    position: absolute;
+    z-index: 3;
+    left: calc(20 / 430 * 100%);
+    right: calc(20 / 430 * 100%);
+    top: calc(605 / 702 * 100%);
+    height: calc(60 / 702 * 100%);
+    margin: 0;
+    max-width: none;
+    display: block;
   }
   .hero.hero-due-diligence .hero-cta .btn-gold {
-    min-width: min(100%, 286px);
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 13px;
+    background: transparent !important;
+    box-shadow: none;
+    color: transparent;
+    font-size: 0;
+    overflow: hidden;
   }
 }
 
@@ -1126,7 +1138,7 @@ button { background: none; border: none; cursor: pointer; }
   line-height: 1.45;
 }
 .concern-panels {
-  max-width: 1060px;
+  max-width: 1122px;
   margin: 0 auto;
   border-radius: 30px;
   padding: 10px;
@@ -1135,9 +1147,9 @@ button { background: none; border: none; cursor: pointer; }
 }
 .concern-panel {
   display: none;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 38px;
-  padding: 48px;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 42px;
+  padding: 50px;
   border: 1px solid rgba(255, 230, 205, 0.28);
   border-radius: 26px;
   background: linear-gradient(140deg, rgba(48, 38, 33, 0.94), rgba(28, 23, 21, 0.94));
@@ -4339,4 +4351,1211 @@ body .news-section h2.section-title * {
 body .video-section h2.section-title {
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ===== CTA GOLD GRADIENT UPDATE (20260603-152629) ===== */
+.btn-gold,
+.nav-cta-btn,
+.concern-panel-cta,
+.video-cta-btn,
+.case-consult-link,
+.si-btn,
+.form-actions .si-btn.btn-gold,
+.sticky-btn,
+.sticky-consult,
+.sticky-phone {
+  background: linear-gradient(90deg, #DCAE75 0%, #FFE9CE 47.6%, #DCAE75 100%) !important;
+}
+.btn-gold:hover,
+.nav-cta-btn:hover,
+.concern-panel-cta:hover,
+.video-cta-btn:hover,
+.case-consult-link:hover,
+.si-btn:hover,
+.form-actions .si-btn.btn-gold:hover,
+.sticky-btn:hover,
+.sticky-consult:hover,
+.sticky-phone:hover {
+  background: linear-gradient(90deg, #DCAE75 0%, #FFE9CE 47.6%, #DCAE75 100%) !important;
+}
+
+/* ===== CTA GOLD GRADIENT + HOVER SYNC (20260603-152851) ===== */
+.btn-gold,
+.nav-cta-btn,
+.concern-panel-cta,
+.video-cta-btn,
+.case-consult-link,
+.si-btn,
+.form-actions .si-btn.btn-gold,
+.sticky-btn,
+.sticky-consult,
+.sticky-phone {
+  background: linear-gradient(90deg, #DCAE75 0%, #FFE9CE 47.6%, #DCAE75 100%) !important;
+  background-size: 100% 100% !important;
+  color: #2D180C !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease, background 0.28s ease !important;
+  box-shadow: 0 12px 26px rgba(147, 77, 38, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.42) !important;
+}
+.btn-gold:hover,
+.nav-cta-btn:hover,
+.concern-panel-cta:hover,
+.video-cta-btn:hover,
+.case-consult-link:hover,
+.si-btn:hover,
+.form-actions .si-btn.btn-gold:hover,
+.sticky-btn:hover,
+.sticky-consult:hover,
+.sticky-phone:hover {
+  background: linear-gradient(90deg, #DCAE75 0%, #FFE9CE 47.6%, #DCAE75 100%) !important;
+  transform: translateY(-2px) !important;
+  filter: brightness(1.04) saturate(1.02) !important;
+  box-shadow: 0 18px 36px rgba(147, 77, 38, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.52) !important;
+  color: #2D180C !important;
+}
+.si-btn:disabled,
+.form-actions .si-btn.btn-gold:disabled {
+  transform: none !important;
+  filter: none !important;
+  opacity: 0.72;
+}
+
+/* ===== SECTION 1 HOVER STYLE FOR SELECT CTA (20260603-161036) ===== */
+.sticky-consult,
+.concern-panel-cta,
+.why-section .section-cta .btn-gold {
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all var(--transition) !important;
+}
+.sticky-consult::before,
+.concern-panel-cta::before,
+.why-section .section-cta .btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: left 0.6s;
+  pointer-events: none;
+}
+.sticky-consult:hover,
+.concern-panel-cta:hover,
+.why-section .section-cta .btn-gold:hover {
+  transform: translateY(-2px) !important;
+  filter: none !important;
+  box-shadow: 0 8px 30px rgba(241,209,169,0.4) !important;
+}
+.sticky-consult:hover::before,
+.concern-panel-cta:hover::before,
+.why-section .section-cta .btn-gold:hover::before {
+  left: 100%;
+}
+
+/* ===== SEC1 ALIGN + GRADIENT BORDER TEXT BOXES (20260603-163927) ===== */
+.hero.hero-due-diligence .hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero.hero-due-diligence .hero-title,
+.hero.hero-due-diligence .hero-title-structured,
+.hero.hero-due-diligence .hero-kicker,
+.hero.hero-due-diligence .hero-checklist,
+.hero.hero-due-diligence .hero-cta {
+  width: min(100%, 720px);
+}
+.hero.hero-due-diligence .hero-title-line {
+  text-align: center;
+}
+.hero.hero-due-diligence .hero-kicker {
+  border: 1.18px solid transparent !important;
+  border-image-source: linear-gradient(180deg, rgba(241, 209, 169, 0.2) 0%, #FFFFFF 49.04%, rgba(241, 209, 169, 0.2) 98.08%) !important;
+  border-image-slice: 1 !important;
+}
+.hero.hero-due-diligence .hero-checklist {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  justify-items: stretch;
+  align-items: stretch;
+  column-gap: clamp(24px, 4.8vw, 54px);
+}
+.hero.hero-due-diligence .hero-check.hero-feature-card {
+  height: 100%;
+  justify-content: flex-start;
+}
+.hero.hero-due-diligence .hero-feature-icon {
+  flex: 0 0 auto;
+}
+.hero.hero-due-diligence .hero-feature-card p {
+  width: 100%;
+  min-height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px 12px;
+  border: 1.18px solid transparent;
+  border-image-source: linear-gradient(180deg, rgba(241, 209, 169, 0.2) 0%, #FFFFFF 49.04%, rgba(241, 209, 169, 0.2) 98.08%);
+  border-image-slice: 1;
+  color: #fffaf3;
+  background: rgba(45, 24, 12, 0.18);
+  box-sizing: border-box;
+}
+@media (max-width: 760px) {
+  .hero.hero-due-diligence .hero-title,
+  .hero.hero-due-diligence .hero-title-structured,
+  .hero.hero-due-diligence .hero-kicker,
+  .hero.hero-due-diligence .hero-checklist,
+  .hero.hero-due-diligence .hero-cta {
+    width: 100%;
+  }
+  .hero.hero-due-diligence .hero-checklist {
+    grid-template-columns: 1fr !important;
+  }
+  .hero.hero-due-diligence .hero-feature-card p {
+    max-width: 100%;
+    min-height: auto;
+  }
+}
+
+/* ===== SEC1 TITLE EXACT TYPOGRAPHY + ROW SPACING (20260603-171343) ===== */
+.hero.hero-due-diligence .hero-title,
+.hero.hero-due-diligence .hero-title-structured {
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  font-size: 56px !important;
+  leading-trim: none;
+  line-height: 129% !important;
+  letter-spacing: -0.01em !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  overflow: visible !important;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 22px;
+}
+.hero.hero-due-diligence .hero-title-line {
+  display: block;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-align: inherit !important;
+  text-transform: inherit !important;
+  overflow: visible;
+}
+.hero.hero-due-diligence .hero-title-line-white,
+.hero.hero-due-diligence .hero-title-line-gold,
+.hero.hero-due-diligence .hero-title-line .nowrap {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+}
+@media (max-width: 1024px) {
+  .hero.hero-due-diligence .hero-title,
+  .hero.hero-due-diligence .hero-title-structured {
+    font-size: clamp(42px, 6vw, 56px) !important;
+    line-height: 129% !important;
+    letter-spacing: -0.01em !important;
+  }
+}
+@media (max-width: 760px) {
+  .hero.hero-due-diligence .hero-title,
+  .hero.hero-due-diligence .hero-title-structured {
+    font-size: clamp(29px, 8.4vw, 42px) !important;
+    line-height: 129% !important;
+    letter-spacing: -0.01em !important;
+  }
+}
+
+/* ===== SEC1 KICKER HIGHLIGHT GRADIENT TEXT (20260603-171803) ===== */
+.hero.hero-due-diligence .hero-kicker .hero-kicker-highlight {
+  display: block;
+  background: linear-gradient(180deg, rgba(241, 209, 169, 0.2) 0%, #FFFFFF 49.04%, rgba(241, 209, 169, 0.2) 98.08%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== SEC1 KICKER HIGHLIGHT SOLID COLOR (20260603-173102) ===== */
+.hero.hero-due-diligence .hero-kicker .hero-kicker-highlight {
+  display: block;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  color: #F1D1A9 !important;
+  -webkit-text-fill-color: #F1D1A9 !important;
+}
+
+
+/* SEC1 color-only phrase: no layout/box change */
+.hero.hero-due-diligence .hero-feature-card p .sec1-color-only {
+  display: contents;
+  color: #F1D1A9;
+  -webkit-text-fill-color: #F1D1A9;
+}
+
+/* SEC3 panel alignment + right-column readability (20260604-102446) */
+.concerns-section .concern-panels {
+  width: min(100%, 1122px);
+  max-width: 1122px;
+  padding: 0;
+  box-sizing: border-box;
+}
+.concerns-section .concern-panel {
+  width: 100%;
+  box-sizing: border-box;
+}
+.concern-panel[data-concern-panel="1"] .concern-panel-side ul {
+  gap: 20px;
+}
+.concern-panel[data-concern-panel="1"] .concern-panel-side li {
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+/* SEC3 real width alignment fix (20260604-102926)
+   Container is border-box with 40px side padding; 1202px outer => 1122px content,
+   matching 4 cards: 4*267 + 3*18 = 1122px. */
+.concerns-section .container {
+  max-width: 1202px;
+}
+.concerns-section .concern-tabs,
+.concerns-section .concern-panels {
+  width: 1122px;
+  max-width: 100%;
+}
+
+/* Contact form select typography sync (20260604-104737) */
+.contact-form select.form-control,
+.si-form select.form-control {
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.035em;
+  color: #fff8ef;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.contact-form select.form-control:required:invalid,
+.si-form select.form-control:required:invalid {
+  color: rgba(255,255,255,0.46);
+}
+.contact-form select.form-control option,
+.si-form select.form-control option {
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  color: #212529;
+  background: #fff;
+}
+
+/* SEC6 title phrase color + project spec values unbold (20260604-105819) */
+.project-section .case-section-heading .section-title .sec6-title-gold {
+  color: #F1D1A9 !important;
+  -webkit-text-fill-color: #F1D1A9 !important;
+}
+.case-spec .case-spec-value {
+  display: block;
+  color: rgba(232,232,232,0.86);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  font-weight: 400;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  word-break: normal;
+}
+.case-spec .case-spec-value.gold,
+.case-spec .case-spec-value.green {
+  color: #f7c890;
+}
+
+/* SEC7 video setup box content left align (20260604-111955) */
+.video-section .video-copy {
+  align-items: flex-start;
+  text-align: left;
+}
+.video-section .video-copy .section-title,
+.video-section .video-copy .section-title *,
+.video-section .video-copy .section-subtitle {
+  text-align: left !important;
+}
+.video-section .video-copy .section-title,
+.video-section .video-copy .section-subtitle,
+.video-section .video-copy .video-cta-btn {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* SEC8 FAQ title phrase, question weight, equal group headers (20260604-112706) */
+.faq-section .section-title .faq-title-gold {
+  color: #F1D1A9 !important;
+  -webkit-text-fill-color: #F1D1A9 !important;
+}
+.faq-section .faq-q {
+  font-weight: 400 !important;
+}
+.faq-section .faq-q > span:first-child {
+  font-weight: 400 !important;
+}
+.faq-section .faq-group-header {
+  height: 124px;
+  min-height: 124px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 1023px) {
+  .faq-section .faq-group-header {
+    height: auto;
+    min-height: auto;
+  }
+}
+
+/* ================================================================
+   MOBILE UI POLISH — 2026-06-04
+   Tất cả rules đều là @media mobile-only.
+   Desktop (≥769px) KHÔNG bị ảnh hưởng.
+   ================================================================ */
+
+/* ANNOUNCE BAR + NAVBAR
+   Fix: trên mobile cả 2 đều fixed top:0 → navbar bị ẩn dưới
+   announce bar. Fix: cố định announce bar 44px rồi đẩy navbar xuống. */
+@media (max-width: 768px) {
+  .announce-bar {
+    height: 44px;
+    overflow: hidden;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .navbar { top: 44px; }
+}
+
+/* SEC1 HERO — Đổi feature cards từ dọc sang ngang (icon trái, text phải)
+   Tiết kiệm ~40% chiều cao hero, dễ scan hơn trên mobile. */
+@media (max-width: 760px) {
+  .hero.hero-due-diligence .hero-checklist {
+    gap: 12px !important;
+    margin-bottom: 28px !important;
+  }
+  .hero.hero-due-diligence .hero-check.hero-feature-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 14px !important;
+    background: rgba(38, 22, 14, 0.55) !important;
+    border: 1px solid rgba(241, 209, 169, 0.22) !important;
+    border-radius: 13px !important;
+    padding: 14px 16px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-icon {
+    width: 60px !important;
+    height: 60px !important;
+    flex-shrink: 0 !important;
+    border-radius: 10px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-icon::before {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .hero.hero-due-diligence .hero-feature-card p {
+    text-align: left !important;
+    max-width: 100% !important;
+    font-size: 0.83rem !important;
+    line-height: 1.52 !important;
+    margin: 0 !important;
+  }
+}
+
+/* SEC2 OPPORTUNITY — Fix font-size cứng 37.6px trên mobile */
+@media (max-width: 768px) {
+  .opportunity-heading .section-title {
+    font-size: clamp(1.28rem, 5.4vw, 1.9rem) !important;
+    line-height: 1.28 !important;
+    letter-spacing: 0.05em !important;
+    white-space: normal !important;
+  }
+}
+
+/* SEC3 TABS — Fluid full-width thay vì fixed 267px
+   Hiện tại tabs chỉ 267px trong container 100% → lệch sang trái. */
+@media (max-width: 620px) {
+  .concern-tabs,
+  .concerns-section .concern-tabs {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .concern-tab {
+    min-height: auto !important;
+    padding: 15px 18px !important;
+  }
+}
+
+/* SEC5 PRINCIPLES — Fix white-space:nowrap gây overflow title
+   + Hiện toàn bộ subtitle (đang bị -webkit-line-clamp cắt). */
+@media (max-width: 768px) {
+  .principles-section .section-title {
+    white-space: normal !important;
+    font-size: clamp(1.32rem, 5.6vw, 1.85rem) !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.06em !important;
+  }
+  .principles-section .section-subtitle {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+}
+
+/* SEC9 WHY — 1 cột trên điện thoại rất nhỏ (≤420px) */
+@media (max-width: 420px) {
+  .why-metrics-grid { grid-template-columns: 1fr !important; }
+  .why-showcase { padding: 24px 16px 18px !important; }
+}
+
+/* FOOTER SOCIAL — Touch target lớn hơn, wrap nếu cần */
+@media (max-width: 560px) {
+  .office-footer-socials { gap: 14px !important; flex-wrap: wrap; }
+  .social-icon { width: 42px !important; height: 42px !important; }
+}
+
+/* ================================================================
+   MOBILE SECTION-BY-SECTION VISUAL IMPROVEMENTS — 2026-06-04-v2
+   Các thay đổi rõ ràng, visible cho từng section trên mobile.
+   Desktop (≥769px) không bị ảnh hưởng.
+   ================================================================ */
+
+/* GLOBAL: Giảm padding section — trang ngắn hơn đáng kể trên mobile */
+@media (max-width: 768px) {
+  .opportunity-section  { padding: 60px 0 64px; }
+  .concerns-section     { padding: 58px 0 64px; }
+  .video-section        { padding: 56px 0 60px; }
+  .faq-section          { padding: 56px 0 62px; }
+  .news-section         { padding: 54px 0 58px; }
+  .principles-section   { padding: 54px 0 62px !important; }
+  .why-section          { padding: 56px 0 60px !important; }
+  .section-subtitle     { margin-bottom: 28px !important; }
+}
+
+/* SEC2 OPPORTUNITY — Giảm min-height card, compact hơn */
+@media (max-width: 768px) {
+  .opportunity-card  { min-height: 0; padding: 22px 20px 24px; }
+  .opportunity-panel { padding: 22px 20px; gap: 18px; min-height: 0; }
+  .opportunity-metric {
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+  }
+  .opportunity-metric strong {
+    font-size: clamp(2.2rem, 8vw, 2.8rem);
+    white-space: normal;
+  }
+  .opportunity-grid { gap: 14px; }
+  .opportunity-copy h3, .opportunity-card h3 {
+    font-size: 0.98rem;
+    line-height: 1.38;
+  }
+  .opportunity-copy p, .opportunity-card p {
+    font-size: 0.88rem;
+    line-height: 1.72;
+  }
+}
+
+/* SEC3 CONCERNS — Scale h3 panel xuống từ 2rem cứng */
+@media (max-width: 768px) {
+  .concern-panel-main h3 {
+    font-size: clamp(1.2rem, 5.8vw, 1.65rem) !important;
+    line-height: 1.22 !important;
+    margin-bottom: 14px !important;
+  }
+  .concern-panel-main > p {
+    font-size: 0.88rem !important;
+    line-height: 1.72 !important;
+    margin-bottom: 18px !important;
+  }
+  .concern-solution-box {
+    padding: 18px 16px !important;
+    margin-top: 16px;
+    border-radius: 14px !important;
+  }
+  .concern-solution-box h4 { font-size: 0.88rem !important; margin-bottom: 10px !important; }
+  .concern-solution-box p  { font-size: 0.84rem !important; line-height: 1.68 !important; }
+  .concern-panel-side {
+    padding: 18px 16px !important;
+    border-radius: 14px !important;
+  }
+  .concern-panel-side h4  { font-size: 0.88rem !important; margin-bottom: 16px !important; letter-spacing: 0.08em !important; }
+  .concern-panel-side li  { font-size: 0.84rem !important; line-height: 1.62 !important; }
+  .concern-panel-side ul  { gap: 12px !important; margin-bottom: 18px !important; }
+  .concern-panel-cta {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 13px 20px !important;
+    min-height: 48px !important;
+  }
+  .concern-label { font-size: 0.62rem !important; padding: 7px 13px !important; }
+}
+
+/* SEC5 PRINCIPLES — Compact cards */
+@media (max-width: 720px) {
+  .principles-grid.principles-grid-five { gap: 12px !important; }
+  .principles-grid-five .principle-card {
+    padding: 18px 16px !important;
+    min-height: 0 !important;
+  }
+  .principles-grid-five .principle-card h3 {
+    font-size: 0.88rem !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 0.08em !important;
+  }
+  .principles-grid-five .principle-card p {
+    font-size: 0.82rem !important;
+    line-height: 1.68 !important;
+    margin-bottom: 10px !important;
+  }
+  .principles-section .section-cta { margin-top: 28px !important; }
+}
+
+/* SEC7 VIDEO — Clean padding + fix border-image trên mobile */
+@media (max-width: 768px) {
+  .video-copy {
+    padding: 26px 22px 26px !important;
+    min-height: 0 !important;
+    border: 1px solid rgba(241,209,169,0.20) !important;
+    border-image: none !important;
+    border-image-source: none !important;
+  }
+  .video-section .left-subtitle {
+    font-size: 0.86rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 22px !important;
+  }
+  .video-cta-btn { min-width: 0 !important; width: 100% !important; max-width: 360px; }
+  .video-card.glass { width: 100% !important; }
+}
+
+/* SEC8 FAQ — Compact items, dễ tap hơn */
+@media (max-width: 768px) {
+  .faq-grid { gap: 20px !important; }
+  .faq-group { gap: 10px !important; }
+  .faq-group-header { padding: 16px 18px !important; border-radius: 16px !important; }
+  .faq-group-header h3 { font-size: 0.92rem !important; }
+  .faq-q { padding: 15px 18px !important; font-size: 0.87rem !important; min-height: 0 !important; }
+  .faq-a p { font-size: 0.85rem !important; line-height: 1.72 !important; }
+  .faq-icon { width: 26px !important; height: 26px !important; font-size: 1.1rem !important; }
+}
+
+/* SEC9 WHY — Compact metric cards, ít scroll hơn */
+@media (max-width: 640px) {
+  .why-metrics-grid { gap: 10px !important; }
+  .why-metric-card {
+    min-height: 0 !important;
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+  .why-metric-value {
+    font-size: clamp(1.7rem, 6.5vw, 2rem) !important;
+    margin-bottom: 8px !important;
+  }
+  .why-metric-card h3 { font-size: 0.82rem !important; margin-bottom: 4px !important; line-height: 1.4 !important; }
+  .why-metric-card p  { font-size: 0.74rem !important; line-height: 1.45 !important; }
+  .why-divider { height: 32px !important; }
+  .why-showcase { padding: 20px 12px 16px !important; }
+  .why-section .section-cta { margin-top: 24px; }
+}
+
+/* SEC10 NEWS — Compact news cards */
+@media (max-width: 768px) {
+  .news-grid { gap: 14px !important; max-width: 100% !important; }
+  .news-img-wrapper { height: 140px !important; }
+  .news-content { padding: 16px 16px 18px !important; }
+  .news-content h4 { font-size: 0.9rem !important; line-height: 1.46 !important; margin-bottom: 10px !important; }
+  .news-content p  { font-size: 0.82rem !important; line-height: 1.62 !important; margin-bottom: 14px !important; }
+  .news-link { font-size: 0.74rem !important; }
+  .news-section .section-title { font-size: clamp(1.5rem, 6.5vw, 2rem) !important; letter-spacing: 0.07em !important; }
+  .news-section .section-subtitle { font-size: 0.88rem !important; margin-bottom: 30px !important; }
+  .news-section .section-cta { margin-top: 26px !important; }
+}
+
+/* FOOTER — Compact map + info trên mobile */
+@media (max-width: 640px) {
+  .footer.si-office-footer { padding: 48px 0 120px; }
+  .footer-logo-img { height: 60px !important; max-width: 152px !important; margin-bottom: 16px !important; }
+  .office-footer-card { gap: 22px !important; }
+  .office-footer-heading h3 { font-size: 1.15rem !important; letter-spacing: 0.09em !important; }
+  .office-footer-heading p { font-size: 0.86rem !important; line-height: 1.65 !important; }
+  .office-address-content h3 { font-size: 0.86rem !important; }
+  .office-address-content p  { font-size: 0.82rem !important; line-height: 1.56 !important; margin-bottom: 16px !important; }
+  .office-footer-map { height: 240px !important; min-height: 240px !important; border-radius: 14px !important; }
+  .office-footer-map iframe { min-height: 240px !important; }
+}
+
+
+/* SEC3 mobile title exact size/padding fix — keep desktop unchanged (20260604173922) */
+@media (max-width: 760px) {
+  body .concerns-section .concerns-heading {
+    width: 100%;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
+    overflow: visible !important;
+  }
+  body .concerns-section h2.sec3-title,
+  body .concerns-section h2.section-title.sec3-title {
+    width: 100%;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.012em !important;
+    text-align: center !important;
+    overflow: visible !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+  }
+  body .concerns-section h2.sec3-title .sec3-title-line {
+    display: block;
+    max-width: 100%;
+    white-space: normal !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+@media (max-width: 390px) {
+  body .concerns-section h2.sec3-title,
+  body .concerns-section h2.section-title.sec3-title {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.008em !important;
+  }
+}
+
+/* ===== SEC1 MOBILE SVG NAV CLEARANCE (20260605103713) =====
+   Fixed header trên mobile gồm announce bar 44px + navbar 62px.
+   Đẩy riêng Section 1 bản SEC1U.svg xuống thêm để tiêu đề không bị che/dính menu. */
+@media (max-width: 480px) {
+  .hero.hero-due-diligence {
+    margin-top: 106px !important;
+  }
+}
+
+/* ===== MOBILE ANNOUNCE BAR HIDE ON SCROLL (20260605104135) =====
+   Mobile only: kéo xuống ẩn thanh thông báo quan trọng, kéo lên hiện lại. */
+@media (max-width: 768px) {
+  .announce-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1003;
+    transform: translateY(0);
+    transition: transform 0.28s ease, opacity 0.28s ease;
+    will-change: transform;
+  }
+  body.mobile-announce-hidden .announce-bar {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .navbar {
+    transition: top 0.28s ease, background var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+  body.mobile-announce-hidden .navbar {
+    top: 0 !important;
+  }
+  body.mobile-announce-hidden .nav-links {
+    top: 0;
+    height: 100dvh;
+  }
+}
+
+/* ===== MOBILE SECTION TITLES SYNC TO SEC1 TYPOGRAPHY (20260605104804) =====
+   Mobile only. Đồng bộ typography tiêu đề các section còn lại theo SEC1.
+   Không set color / background / -webkit-text-fill-color để giữ nguyên màu hiện tại từng section. */
+@media (max-width: 768px) {
+  body :is(
+    .opportunity-section .section-title,
+    .concerns-section .section-title,
+    .principles-section .section-title,
+    .contact-left .sec4-title,
+    .contact-left h2,
+    .safety-section .section-title,
+    .project-section .case-section-heading .section-title,
+    .video-section .left-title,
+    .video-section .section-title,
+    .faq-section .section-title,
+    .why-section .section-title,
+    .news-section .section-title
+  ) {
+    font-family: 'Josefin Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: clamp(29px, 8.4vw, 42px) !important;
+    line-height: 129% !important;
+    letter-spacing: -0.01em !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+  }
+  body :is(
+    .opportunity-section .section-title,
+    .concerns-section .section-title,
+    .principles-section .section-title,
+    .contact-left .sec4-title,
+    .contact-left h2,
+    .safety-section .section-title,
+    .project-section .case-section-heading .section-title,
+    .video-section .left-title,
+    .video-section .section-title,
+    .faq-section .section-title,
+    .why-section .section-title,
+    .news-section .section-title
+  ) :is(span, em, strong) {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-transform: inherit !important;
+  }
+}
+
+/* ===== MOBILE SECTION SPACING 16PX (20260605111045) =====
+   Mobile only: đồng bộ padding top/bottom của tất cả section = 16px.
+   Desktop không bị ảnh hưởng. */
+@media (max-width: 768px) {
+  body section,
+  body .hero.hero-due-diligence,
+  body .opportunity-section,
+  body .concerns-section,
+  body .contact-section,
+  body .benefits-section,
+  body .principles-section,
+  body .project-section,
+  body .eb5-case-section,
+  body .video-section,
+  body .faq-section,
+  body .why-section,
+  body .news-section {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+}
+
+/* ===== MOBILE ALL MAIN SECTION TITLES SAME CSS (20260605112914) =====
+   Mobile only: đồng bộ CSS typography cho tiêu đề chính từng section.
+   Chỉ KHÔNG set color/background/text-fill để từng section được khác màu chữ. */
+@media (max-width: 768px) {
+  body :is(
+    .hero.hero-due-diligence .hero-title,
+    .hero.hero-due-diligence .hero-title-structured,
+    .opportunity-section > .container > .opportunity-heading > .section-title,
+    .concerns-section > .container > .concerns-heading > .section-title,
+    .contact-section .contact-left .sec4-title,
+    .contact-section .contact-left h2,
+    .principles-section > .container > .section-title,
+    .eb5-case-section .case-section-heading > .section-title,
+    .project-section .case-section-heading > .section-title,
+    .video-section .left-title,
+    .video-section .section-title,
+    .faq-section > .container > .section-title,
+    .why-section > .container > .section-title,
+    .news-section > .container > .section-title
+  ) {
+    font-family: 'Josefin Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: clamp(29px, 8.4vw, 42px) !important;
+    line-height: 129% !important;
+    letter-spacing: -0.01em !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body :is(
+    .hero.hero-due-diligence .hero-title,
+    .hero.hero-due-diligence .hero-title-structured,
+    .opportunity-section > .container > .opportunity-heading > .section-title,
+    .concerns-section > .container > .concerns-heading > .section-title,
+    .contact-section .contact-left .sec4-title,
+    .contact-section .contact-left h2,
+    .principles-section > .container > .section-title,
+    .eb5-case-section .case-section-heading > .section-title,
+    .project-section .case-section-heading > .section-title,
+    .video-section .left-title,
+    .video-section .section-title,
+    .faq-section > .container > .section-title,
+    .why-section > .container > .section-title,
+    .news-section > .container > .section-title
+  ) :is(span, em, strong, .nowrap) {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-transform: inherit !important;
+  }
+}
+
+/* ===== SEC2 MOBILE TITLE 4 LINES NO CLIP (20260605130409) =====
+   Mobile only: cân lại 4 dòng để không mất chữ "NẰM".
+   Apply gradient clipping trên từng dòng span để tránh browser cắt chữ khi span là block. */
+.opportunity-section .sec2-mobile-title-line {
+  display: inline;
+}
+@media (max-width: 768px) {
+  body .opportunity-section .sec2-mobile-title-4lines {
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 4px 0 !important;
+    overflow: visible !important;
+    font-size: clamp(22px, 5.9vw, 26px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.025em !important;
+    background: none !important;
+    color: inherit;
+    -webkit-text-fill-color: initial;
+  }
+  body .opportunity-section .sec2-mobile-title-4lines .sec2-mobile-title-line {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    background: linear-gradient(90deg, #7F3E1A 0%, #BA6C41 50%, #783C1A 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+}
+
+/* ===== MOBILE ALL SECTION TITLES SYNC SEC1 FINAL (20260605130742) =====
+   Mobile only: đồng bộ typography tiêu đề chính tất cả section theo Section 1.
+   Chỉ không set màu/background để mỗi section giữ màu chữ riêng. */
+@media (max-width: 768px) {
+  body :is(
+    .hero.hero-due-diligence .hero-title,
+    .hero.hero-due-diligence .hero-title-structured,
+    .opportunity-section > .container > .opportunity-heading > .section-title,
+    .concerns-section > .container > .concerns-heading > .section-title,
+    .contact-section .contact-left .sec4-title,
+    .contact-section .contact-left h2,
+    .principles-section > .container > .section-title,
+    .eb5-case-section .case-section-heading > .section-title,
+    .project-section .case-section-heading > .section-title,
+    .video-section .left-title,
+    .video-section .section-title,
+    .faq-section > .container > .section-title,
+    .why-section > .container > .section-title,
+    .news-section > .container > .section-title
+  ) {
+    font-family: 'Josefin Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: clamp(29px, 8.4vw, 42px) !important;
+    line-height: 129% !important;
+    letter-spacing: -0.01em !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  body :is(
+    .hero.hero-due-diligence .hero-title,
+    .hero.hero-due-diligence .hero-title-structured,
+    .opportunity-section > .container > .opportunity-heading > .section-title,
+    .concerns-section > .container > .concerns-heading > .section-title,
+    .contact-section .contact-left .sec4-title,
+    .contact-section .contact-left h2,
+    .principles-section > .container > .section-title,
+    .eb5-case-section .case-section-heading > .section-title,
+    .project-section .case-section-heading > .section-title,
+    .video-section .left-title,
+    .video-section .section-title,
+    .faq-section > .container > .section-title,
+    .why-section > .container > .section-title,
+    .news-section > .container > .section-title
+  ) :is(span, em, strong, .nowrap) {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-transform: inherit !important;
+  }
+}
+
+/* ===== SEC2 MOBILE TITLE STRICT 4 LINES (20260605131420) =====
+   Mobile only: STRICT đúng 4 dòng theo yêu cầu. Đặt cuối file để thắng global title sync.
+   Giảm size + tăng line-height/padding để không mất chữ/dấu tiếng Việt. */
+@media (max-width: 768px) {
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    display: block !important;
+    width: calc(100vw - 28px) !important;
+    max-width: calc(100vw - 28px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 16px !important;
+    padding: 8px 0 !important;
+    overflow: visible !important;
+    font-size: clamp(22px, 5.75vw, 26px) !important;
+    line-height: 1.34 !important;
+    letter-spacing: -0.025em !important;
+    white-space: normal !important;
+    text-wrap: initial !important;
+    background: none !important;
+    color: inherit !important;
+    -webkit-text-fill-color: initial !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+  }
+
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-mobile-title-line {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1px 0 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    line-height: inherit !important;
+    background: linear-gradient(90deg, #7F3E1A 0%, #BA6C41 50%, #783C1A 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+}
+
+
+/* ===== MOBILE 375-430 RESPONSIVE ACCORDION + STICKY CTA (20260605132603) ===== */
+@media (min-width: 375px) and (max-width: 430px) {
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
+  /* Nav: hamburger đã có sẵn, chỉ siết lại kích thước cho 375-430 để không tràn. */
+  .navbar { padding: 0 12px !important; }
+  .navbar-inner { height: 58px !important; }
+  .site-logo-img { height: 38px !important; max-width: 116px !important; }
+  .menu-toggle { display: flex !important; padding: 10px !important; }
+  .menu-toggle span { width: 25px !important; height: 2px !important; }
+  .nav-links {
+    width: min(82vw, 318px) !important;
+    padding: 78px 26px 30px !important;
+    gap: 16px !important;
+  }
+
+  /* Section 3: đổi tab ngang thành accordion dọc để giảm cuộn và không vỡ layout. */
+  .concerns-section { padding: 42px 0 52px !important; }
+  .concerns-heading { margin-bottom: 22px !important; }
+  .concerns-heading .section-subtitle { margin-top: 14px !important; }
+  .sec3-subtitle-line { white-space: normal !important; }
+  .concern-tabs { display: none !important; }
+  .concern-panels {
+    display: grid !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .concern-panel,
+  .concern-panel.active {
+    display: block !important;
+    padding: 16px 15px !important;
+    border-radius: 18px !important;
+    border-color: rgba(255, 230, 205, 0.28) !important;
+    background: linear-gradient(145deg, rgba(48, 38, 33, 0.95), rgba(28, 23, 21, 0.95)) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 14px 32px rgba(17,5,2,0.24) !important;
+    cursor: pointer;
+  }
+  .concern-panel.mobile-accordion-open {
+    border-color: rgba(255, 237, 211, 0.56) !important;
+    background: linear-gradient(145deg, rgba(69, 49, 39, 0.96), rgba(31, 24, 21, 0.96)) !important;
+  }
+  .concern-panel-main { position: relative; padding-right: 30px; }
+  .concern-panel-main::after {
+    content: '+';
+    position: absolute;
+    right: 2px;
+    top: 36px;
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    color: #f7dfb4;
+    border: 1px solid rgba(247, 223, 180, 0.28);
+    background: rgba(255, 239, 216, 0.08);
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .concern-panel.mobile-accordion-open .concern-panel-main::after { content: '–'; }
+  .concern-label {
+    margin-bottom: 10px !important;
+    padding: 6px 10px !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.11em !important;
+    max-width: calc(100% - 32px);
+  }
+  .concern-panel-main h3 {
+    margin-bottom: 0 !important;
+    font-size: clamp(1.08rem, 5vw, 1.34rem) !important;
+    line-height: 1.22 !important;
+    padding-right: 4px;
+  }
+  .concern-panel-main > p,
+  .concern-solution-box,
+  .concern-panel-side { display: none !important; }
+  .concern-panel.mobile-accordion-open .concern-panel-main > p {
+    display: block !important;
+    margin: 14px 0 14px !important;
+    font-size: 0.84rem !important;
+    line-height: 1.62 !important;
+    letter-spacing: 0.018em !important;
+  }
+  .concern-panel.mobile-accordion-open .concern-solution-box {
+    display: block !important;
+    margin-top: 12px !important;
+    padding: 15px 14px !important;
+    border-radius: 14px !important;
+  }
+  .concern-panel.mobile-accordion-open .concern-panel-side {
+    display: flex !important;
+    margin-top: 12px !important;
+    padding: 15px 14px !important;
+    border-radius: 14px !important;
+  }
+  .concern-solution-box h4,
+  .concern-panel-side h4 { font-size: 0.82rem !important; line-height: 1.42 !important; margin-bottom: 10px !important; }
+  .concern-solution-box p,
+  .concern-panel-side li { font-size: 0.79rem !important; line-height: 1.55 !important; }
+  .concern-solution-box p + p { margin-top: 9px !important; }
+  .concern-panel-side ul { gap: 9px !important; margin-bottom: 14px !important; }
+  .concern-panel-cta { min-height: 44px !important; padding: 12px 14px !important; }
+
+  /* Sticky CTA: cố định dưới màn hình khi đã cuộn, đúng copy user yêu cầu. */
+  .sticky-cta {
+    display: none !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+    transform: none !important;
+    width: auto !important;
+    grid-template-columns: 0.88fr 1.12fr !important;
+    gap: 8px !important;
+    padding: 8px !important;
+    border-radius: 18px !important;
+    background: rgba(18,21,29,0.96) !important;
+    z-index: 1200 !important;
+  }
+  .sticky-cta.is-visible { display: grid !important; }
+  .sticky-btn {
+    min-height: 46px !important;
+    padding: 11px 8px !important;
+    justify-content: center !important;
+    font-size: 0.69rem !important;
+    letter-spacing: 0.035em !important;
+    white-space: nowrap !important;
+  }
+}
+
+
+/* ===== SEC2 MOBILE TITLE FIGMA SPEC (20260605133204) ===== */
+@media (max-width: 768px) {
+  /* Mobile-only Section 2 title: exact supplied Figma typography/gradient. */
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    width: min(385px, calc(100vw - 6px)) !important;
+    max-width: min(385px, calc(100vw - 6px)) !important;
+    height: 160px !important;
+    min-height: 160px !important;
+    margin: 0 auto 18px !important;
+    position: relative !important;
+    left: 3px !important;
+    top: 0 !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    font-family: 'Josefin Sans', var(--font-main), sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    font-size: 32px !important;
+    line-height: 40px !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    white-space: normal !important;
+    text-wrap: initial !important;
+    background: none !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+  }
+
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-mobile-title-line {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: linear-gradient(90deg, #7F3E1A 0%, #BA6C41 50%, #783C1A 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+  }
 }
