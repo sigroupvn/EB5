@@ -694,7 +694,7 @@ button { background: none; border: none; cursor: pointer; }
     padding: 0;
     min-height: calc(100vw * 702 / 430);
     align-items: stretch;
-    background: url('resources/SEC1U.svg?v=20260605104804') top center / 100% auto no-repeat;
+    background: url('resources/SEC1U.svg?v=20260608095711') top center / 100% auto no-repeat;
   }
   .hero.hero-due-diligence::before,
   .hero.hero-due-diligence .hero-overlay,
@@ -3028,10 +3028,10 @@ button { background: none; border: none; cursor: pointer; }
 .news-grid { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
 .news-card.glass { overflow: hidden; border-radius: 17px; background: rgba(37,37,36,0.92); border: 1px solid rgba(241,209,169,0.36); box-shadow: inset 0 0 28px rgba(255,255,255,0.04), 0 24px 54px rgba(0,0,0,0.32); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 .news-card.glass:hover { transform: translateY(-5px); border-color: rgba(241,209,169,0.62); box-shadow: inset 0 0 32px rgba(255,255,255,0.05), 0 28px 62px rgba(0,0,0,0.38); }
-.news-img-wrapper { height: 166px; overflow: hidden; background-image: url('resources/SEC10.jpg'); background-size: 2033px 860px; background-repeat: no-repeat; border-bottom: 1px solid rgba(241,209,169,0.16); }
-.news-card:nth-child(1) .news-img-wrapper { background-position: -455px -247px; }
-.news-card:nth-child(2) .news-img-wrapper { background-position: -838px -247px; }
-.news-card:nth-child(3) .news-img-wrapper { background-position: -1218px -247px; }
+.news-img-wrapper { height: 166px; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; border-bottom: 1px solid rgba(241,209,169,0.16); }
+.news-card:nth-child(1) .news-img-wrapper { background-image: url('resources/pic1.jpg?v=20260606120203'); }
+.news-card:nth-child(2) .news-img-wrapper { background-image: url('resources/pic2.jpg?v=20260606120203'); }
+.news-card:nth-child(3) .news-img-wrapper { background-image: url('resources/pic3.jpg?v=20260606120203'); }
 .news-content { padding: 28px 26px 30px; }
 .news-tag { display: inline-flex; align-items: center; min-height: 30px; padding: 4px 15px; border-radius: 999px; background: rgba(34,34,34,0.76); border: 1px solid rgba(241,209,169,0.62); color: var(--gold-light); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.16em; margin-bottom: 18px; }
 .news-content h4 { color: rgba(255,255,255,0.95); font-size: 1rem; line-height: 1.55; font-weight: 800; letter-spacing: 0.045em; margin-bottom: 16px; }
@@ -5364,13 +5364,13 @@ body .video-section h2.section-title {
 }
 
 
-/* ===== MOBILE 375-430 RESPONSIVE ACCORDION + STICKY CTA (20260605132603) ===== */
-@media (min-width: 375px) and (max-width: 430px) {
+/* ===== MOBILE RESPONSIVE ACCORDION + STICKY CTA (<=768px, extended 2026060810) ===== */
+@media (max-width: 768px) {
   body {
     padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
 
-  /* Nav: hamburger đã có sẵn, chỉ siết lại kích thước cho 375-430 để không tràn. */
+  /* Nav: hamburger đã có sẵn, siết lại kích thước cho mobile để không tràn. */
   .navbar { padding: 0 12px !important; }
   .navbar-inner { height: 58px !important; }
   .site-logo-img { height: 38px !important; max-width: 116px !important; }

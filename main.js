@@ -205,13 +205,13 @@ function initConcernTabs() {
 }
 initConcernTabs();
 
-// ===== SECTION 3 MOBILE ACCORDION (375px - 430px) =====
+// ===== SECTION 3 MOBILE ACCORDION (<=768px) =====
 function initConcernMobileAccordion() {
   const panels = Array.from(document.querySelectorAll('[data-concern-panel]'));
   const tabs = Array.from(document.querySelectorAll('[data-concern-tab]'));
   if (!panels.length) return;
 
-  const isAccordionRange = () => window.matchMedia('(min-width: 375px) and (max-width: 430px)').matches;
+  const isAccordionRange = () => window.matchMedia('(max-width: 768px)').matches;
 
   function openPanel(target) {
     panels.forEach(panel => {
@@ -440,7 +440,7 @@ initCmsHubspotContactForm();
 const stickyCta = document.getElementById('stickyCta');
 function updateStickyCta() {
   if (!stickyCta) return;
-  const isMobileCtaRange = window.matchMedia('(min-width: 375px) and (max-width: 430px)').matches;
+  const isMobileCtaRange = window.matchMedia('(max-width: 768px)').matches;
   const shouldShow = isMobileCtaRange && window.scrollY > window.innerHeight * 0.35;
   stickyCta.classList.toggle('is-visible', shouldShow);
 }
