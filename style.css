@@ -6553,3 +6553,185 @@ body .video-section h2.section-title {
     overflow: visible !important;
   }
 }
+
+/* ===== MOBILE H1/H2 OVERFLOW SAFE FIX (2026060810) =====
+   Fix text overflow/missing text on small phone widths without changing desktop. */
+@media (max-width: 768px) {
+  body .container,
+  body section > .container,
+  body .hero-container,
+  body .hero-copy,
+  body .opportunity-heading,
+  body .concerns-heading,
+  body .contact-left,
+  body .principles-section .container,
+  body .project-section .container,
+  body .video-section .container,
+  body .faq-section .container,
+  body .why-section .container,
+  body .news-section .container {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: max(15px, env(safe-area-inset-left)) !important;
+    padding-right: max(15px, env(safe-area-inset-right)) !important;
+    overflow: visible !important;
+  }
+
+  body h1,
+  body h2,
+  body .hero-title,
+  body .hero-title-structured,
+  body .section-title,
+  body .sec3-title,
+  body .sec4-title,
+  body .contact-left h2,
+  body .video-title-two-lines {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+    font-size: clamp(20px, 6vw, 36px) !important;
+    line-height: 1.22 !important;
+    letter-spacing: clamp(0.01em, 0.6vw, 0.08em) !important;
+    text-align: center !important;
+  }
+
+  body .hero-title-line,
+  body .section-title > span,
+  body .section-title > em,
+  body .sec3-title-line,
+  body .sec4-title-line,
+  body .video-title-two-lines > span,
+  body .faq-title-gold,
+  body .sec6-title-gold,
+  body .sec6-title-tieu-bieu {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  body .section-title .nowrap,
+  body .hero-title .nowrap {
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body h1,
+  body h2,
+  body .hero-title,
+  body .hero-title-structured,
+  body .section-title,
+  body .sec3-title,
+  body .sec4-title,
+  body .contact-left h2,
+  body .video-title-two-lines {
+    font-size: clamp(19px, 5.7vw, 30px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: clamp(0px, 0.35vw, 0.045em) !important;
+  }
+}
+
+/* ===== SEC2 MOBILE TITLE NATURAL WRAP FIX (2026060810) =====
+   Fix: Section 2 heading was still clipped on narrow phones because older strict 4-line
+   span rules could create over-wide lines. Let the title wrap naturally on mobile. */
+@media (max-width: 768px) {
+  body .opportunity-section > .container,
+  body .opportunity-section > .container > .opportunity-heading {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    overflow: visible !important;
+  }
+
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines,
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-4lines {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 390px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto 18px !important;
+    padding: 8px 0 10px !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    text-wrap: balance !important;
+    font-family: 'Playfair Display', 'Merriweather', serif !important;
+    font-size: clamp(18px, 5.25vw, 25px) !important;
+    line-height: 1.42 !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    background: none !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-mobile-title-line,
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-4lines .sec2-mobile-title-line {
+    display: inline !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    text-wrap: inherit !important;
+    line-height: inherit !important;
+    background: linear-gradient(90deg, #7F3E1A 0%, #BA6C41 50%, #783C1A 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines .sec2-eb5-nowrap,
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-4lines .sec2-eb5-nowrap {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow: visible !important;
+  }
+}
+
+@media (max-width: 374px) {
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-strict-4lines,
+  body .opportunity-section > .container > .opportunity-heading > h2.section-title.sec2-mobile-title-4lines {
+    max-width: calc(100vw - 30px) !important;
+    font-size: clamp(17px, 5vw, 20px) !important;
+    line-height: 1.45 !important;
+  }
+}
+
+
+/* Footer Zalo icon image update (20260608112945) */
+.office-footer-socials .social-zalo img {
+  width: 35px !important;
+  height: 35px !important;
+  display: block !important;
+  object-fit: contain !important;
+  border-radius: inherit !important;
+}
