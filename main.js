@@ -415,6 +415,12 @@ function initCmsHubspotContactForm() {
           if (typeof fbq === 'function') {
             fbq('track', 'Lead');
           }
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              event_category: 'form',
+              event_label: 'home-contact-ladipage'
+            });
+          }
           window.location.href = SITE_URL + '/thank-you';
           window.parent.location.href = SITE_URL + '/thank-you';
         } else {
